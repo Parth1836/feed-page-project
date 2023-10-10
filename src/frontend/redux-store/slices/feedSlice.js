@@ -9,11 +9,15 @@ export const feedSlice = createSlice({
   },
   reducers: {
     setFeedsList: (state, action) => {
-      console.log("set all feeds", action.payload);
-      state.feedsList = action.payload;
+      let tempFeedList = [];
+      if(action.payload && action.payload.length> 0){
+        tempFeedList = [...state?.feedsList, ...action?.payload];
+      }else {
+        tempFeedList = state.feedsList;
+      }
+      state.feedsList = tempFeedList;
     },
     setPageId: (state, action) => {
-      console.log("set page Id", action.payload);
       state.pageId = action.payload;
     },
   },
@@ -24,7 +28,6 @@ export const getAllFeeds = (pageNumber = 1) => {
   return async (dispatch) => {
     dispatch(setFeedsList());
     const result = await axios.post("/api/getAllFeeds", { pageId: pageNumber });
-    console.log("feeds result", result?.data?.data?.nodes);
     dispatch(setFeedsList(result?.data?.data?.nodes));
   };
 };
