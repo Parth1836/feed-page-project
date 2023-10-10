@@ -1,0 +1,76 @@
+{
+  "name": "feed-page-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "watch": "webpack -w --mode=development",
+    "build": "webpack --mode=production",
+    "test": "react-scripts test",
+    "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='src/frontend/jest-testing/**/*.{js,jsx}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.14.11",
+    "@mui/material": "^5.14.11",
+    "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^0.21.0",
+    "body-parser": "^1.20.2",
+    "core-js": "^2.5.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.5.2",
+    "nodemailer": "^6.9.4",
+    "nodemon": "^2.0.20",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.2",
+    "react-router": "^3.0.0",
+    "react-router-dom": "^6.9.0",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.7.0",
+    "redis": "^2.6.0-2",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.88.0",
+    "webpack-build-notifier": "^2.3.0",
+    "webpack-dev-server": "^3.11.3",
+    "react-lazy-load-image-component": "^1.6.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "msw": "^0.44.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  }
+}
